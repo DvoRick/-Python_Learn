@@ -61,3 +61,12 @@ False       True
 Пример синтаксиса for           username = input()
 напечатает слово по буквам      for letter in username:
 на каждой строчке                   print(letter)
+
+------------------ КОРТЕЖ -----------------------------------------------------
+object = ()                     объявление кортежа
+object = ("sword", "shield")    заполнение кортежа
+
+print(object)                   вывод: ('sword', 'shield')
+
+for item in object:             вывод/перечесление списком
+print("\t" + item)
