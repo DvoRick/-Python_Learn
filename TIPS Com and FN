@@ -2,7 +2,7 @@
 range(10)               считает по порядку от 0 до 10
 end=" "                 добавляется в print() прописывает значение в строке а не каждое отдельно в новой строчке
 for letter in username  перебирает строку по буквам letter и username это ПЕРЕМЕННЫЕ
-len("max")              отображает количество символов в переменной
+len("max")              отображает количество символов в переменной/списка/кортежа
 VOWELS = ""             константа -- переменная с ЗАГЛАВНЫМИ БУКВАМИ (название конст. может быть любое)
 random                  описан в разделе рандома
 ------------------ Применение математических операторов -----------------
@@ -27,17 +27,17 @@ random                  описан в разделе рандома
 
 Пример: print("\a"), print("\t текст")
 
-print(name + "Over")    GameOver  -- соединение
-print(name, "Over")     Game Over -- перечисление
-print("Game" * 10)      Вывод: GameGameGameGameGameGameGameGameGameGame
+print(name + "Over")    # GameOver  -- соединение
+print(name, "Over")     # Game Over -- перечисление
+print("Game" * 10)      # Вывод: GameGameGameGameGameGameGameGameGameGame
 
 
 ------------------ Модуль random ---------------------------------------
-import random                   Инициализация модуля рандом
+import random                   # Инициализация модуля рандом
 
-dies1 = random.randint(1. 6)    randint() Возвращает случ целое число
-dies2 = random.randrange(6) + 1 randrange() Cлуч целое число от 0-5, надо + 1
-random.choice(WORDS)            случайное число/слово из предложенных
+dies1 = random.randint(1. 6)    # randint() Возвращает случ целое число
+dies2 = random.randrange(6) + 1 # randrange() Cлуч целое число от 0-5, надо + 1
+random.choice(WORDS)            # случайное число/слово из предложенных
 
 ------------------ Циклы -----------------------------------------------
 пример синтаксиса if:           if name == "Max":
@@ -51,7 +51,7 @@ random.choice(WORDS)            случайное число/слово из п
 Логический оператор not:        username = ""
                                 while not username:
                                     username = input("Enter your Login!!!")
-username    not username        цикл будет продолжаться до тех пор пока логин пустой
+username    not username        # цикл будет продолжаться до тех пор пока логин пустой
 True        False
 False       True
 
@@ -62,11 +62,36 @@ False       True
 напечатает слово по буквам      for letter in username:
 на каждой строчке                   print(letter)
 
------------------- КОРТЕЖ -----------------------------------------------------
-object = ()                     объявление кортежа
-object = ("sword", "shield")    заполнение кортежа
+------------------ КОРТЕЖ и СПИСОК -------------------------------------------
+КОРТЕЖ НЕ ИЗМЕНЯЕМЫЙ
 
-print(object)                   вывод: ('sword', 'shield')
+object = ()                     # объявление кортежа
+object = ("sword", "shield")    # заполнение кортежа
 
-for item in object:             вывод/перечесление списком
+len(object)                     # выводит колво объектов в кортеже (2)
+
+print(object)                   # вывод: ('sword', 'shield')
+
+for item in object:             # вывод/перечесление списком
 print("\t" + item)
+
+СПИСОК МОЖНО ИЗМЕНИТЬ/УДАЛИТЬ
+
+object = []                     # объявление списка
+object = ["sword", "shield"]    # заполнение списка
+
+len(object)                     # выводит колво объектов в списке (2)
+
+for item in object:             # вывод/перечесление списком
+print("\t" + item)
+
+print("Bы обменяли меч на арбалет.")
+object[O] = "арбалет"
+
+print("B тяжелом бою был раздроблен ваш щит.")
+del object[2]
+
+print(fruits[0])                # первый элемент
+print(fruits[-1])               # последний элемент
+print(fruits[1:3])              # срез списка
+

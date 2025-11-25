@@ -1,37 +1,41 @@
-inventory = () #создаем кортеж
+score = [] #создаем пустой список
+choice = None #оставляем пустое значение
 
-#рассмотрим его как условие кориежа (интвентаря)
-if not inventory:
-    print("\tInventory is empty") # проверка есть ли что то в инвентаре, инвентарь пуст
-input("Press to continue")
+while choice != "0":
+    print("""
+    
+    Рекорды:
+    1 - показать рекорты
+    2 - добавить реккорд
+    3 - удалить последний рек
+    4 - удалить на выбор
+    5 - сортировать списк рек
+    0 - выйти
+    """)
+    choice = input("выберете команду: ")
 
-inventory = ("sword",
-             "shield",
-             "chain",
-             "heal potion") #заполним инвентарь новым кортежом
-print("\nShow inventory")
-print(inventory)
+    if choice == "0":
+        print("до новых всреч! ")
+    elif choice == "1":
+        print("Ваши рекорды: ")
+        if len(score) == 0:
+            print("у Вас нет записей(((")
+        else:
+            for rec in score:
+                print(rec)
+    elif choice == "2":
+        record = input("Введите рекорд: ")
+        score.append(record)
+    elif choice == "3":
+        score.pop()
+        print("удалили последний рек: ", score[-1])
+    elif choice == "4":
+        delrec = input("какой удалить рек?: ")
+        if delrec in score:
+            score.remove(delrec)
+    elif choice == "5":
+        score.sort(reverse=True)  #сортировка по убыванию (можно без нее)
+        for rec in score:
+            print(rec)
 
-for item in inventory:
-    print("\t" + item)
-
-input("Press to continue")
-
-ans = input("You found chest. Would you like to open? y|n")
-if ans == "y":
-    chest = ("Mana Potion", "Helmet")
-    for item in chest:
-        print("\t" + item)
-    ans = input("Take or not? y|n")
-    if ans == "y":
-        inventory += chest
-        print("\tInventory: ")
-        for item in inventory:
-            print("\t" + item)
-    else:
-        print("\tInventory: ")
-        for item in inventory:
-            print("\t" + item)
-else:
-    print("You did not take anything")
 # страница 136 учебника
