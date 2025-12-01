@@ -33,9 +33,14 @@ while choice != "0":
         delrec = input("какой удалить рек?: ")
         if delrec in score:
             score.remove(delrec)
+        else:
+            print("нет такого в списке")
     elif choice == "5":
         score.sort(reverse=True)  #сортировка по убыванию (можно без нее)
         for rec in score:
             print(rec)
+    else:
+        print("Такого выбора нет")
 
-# страница 136 учебника
+
+# страница 144 учебника
